@@ -1,7 +1,7 @@
 ## Acesso
 
 Você também pode acessar o portfólio através do deploy em:
-[portfólio](https://portfolio-dark-black.vercel.app/)
+[portfólio](https://portfolio-ecru-one-30.vercel.app)
 
 ---
 
