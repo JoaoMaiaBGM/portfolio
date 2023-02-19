@@ -24,7 +24,6 @@ import {
   ProjectAreaWrapperColumns,
 } from "./style";
 
-
 export const Home = (): JSX.Element => {
   return (
     <main>
@@ -32,12 +31,17 @@ export const Home = (): JSX.Element => {
         <Container>
           <HeaderContent>
             <Text as="h1" type="heading1" color="grey5">
-              Criando experiências por meio da tecnologia{" "}
+              Mudando a vida das pessoas por meio da tecnologia{" "}
             </Text>
             <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
+              Desenvolvedor Full-Stack. Dentro das minhas experiências com
+              programação, desenvolvi diversas aplicações, tais como,
+              e-commerce, todo-list, gerenciadores financeiros, portal de
+              notícias, blog, landing pages, Rest APIs para gerenciar apostas,
+              venda de veículos, app de música etc. Utilizando tecnologias como
+              JavaScript, React, Python, Django, Django REST-Framework, Node.js,
+              Postgres, SQLite e CSS. Gosto de desafios e de aprender coisas
+              novas, estou sempre em busca da evolução.
             </Text>
             <HeaderButtonsArea>
               <Button as="a" href="#projetos">

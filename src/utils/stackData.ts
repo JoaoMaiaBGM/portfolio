@@ -4,11 +4,33 @@ import imgJS from "../public/static/img/stack/js.svg";
 import imgNode from "../public/static/img/stack/node.svg";
 import imgStyled from "../public/static/img/stack/styled.svg";
 import imgReact from "../public/static/img/stack/react.svg";
-import { FaVuejs } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
+import { DiDjango } from "react-icons/di";
+import { SiPostgresql } from "react-icons/si";
+import { SiChakraui } from "react-icons/si";
 
 export const stackData = [
+  {
+    title: "JS",
+    img: imgJS,
+  },
+  {
+    title: "React",
+    img: imgReact,
+  },
+  { title: "Python", img: FaPython },
+  {
+    title: "Node JS",
+    img: imgNode,
+  },
+  { title: "Django", img: DiDjango },
+
+  { title: "TypeScript", img: SiTypescript },
+  { title: "Docker", img: FaDocker },
+  { title: "PostgreSQL", img: SiPostgresql },
+
   {
     title: "HTML",
     img: imgHTML,
@@ -18,22 +40,8 @@ export const stackData = [
     img: imgCSS,
   },
   {
-    title: "JS",
-    img: imgJS,
-  },
-  {
-    title: "Node JS",
-    img: imgNode,
-  },
-  {
     title: "Styled Components",
     img: imgStyled,
   },
-  {
-    title: "React",
-    img: imgReact,
-  },
-  { title: "Vuejs", img: FaVuejs },
-  { title: "TypeScript", img: SiTypescript },
-  { title: "Docker", img: FaDocker },
+  { title: "Chakra ui", img: SiChakraui },
 ];
