@@ -44,7 +44,7 @@ export const Home = (): JSX.Element => {
               novas, estou sempre em busca da evolução.
             </Text>
             <HeaderButtonsArea>
-              <Button as="a" href="#projetos">
+              <Button as="a" href="#projetos" type="btProjects">
                 Projetos
               </Button>
               <Button as="a" href="#tecnologias" type="btLink" color="grey5">
@@ -74,9 +74,8 @@ export const Home = (): JSX.Element => {
                 Vamos trocar uma ideia?
               </Text>
               <Text as="p" type="body1" color="grey2">
-                No linkedIn sempre estou compartilhando meus processos diários
-                para desenvolver esses projetos e estou disposto a trocar
-                algumas ideias por lá
+                No linkedIn compartilhano meus para desenvolver esses projetos e
+                estou disposto a trocar algumas ideias por lá
               </Text>
               <Button
                 type="primary"
