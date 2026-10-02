@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+@config '../tailwind.config.js';
+
+@layer base {
+  * {
+    @apply border-port-gray-200;
+  }
+
+  body {
+    @apply bg-port-white text-port-black font-sans;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  [type='button']:not(:disabled),
+  [type='submit']:not(:disabled),
+  [type='reset']:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  .btn-primary {
+    @apply rounded-md border border-port-white bg-port-primary px-4 py-2 text-port-white transition-colors;
+    @apply hover:border-port-black hover:bg-port-black hover:text-port-white;
+  }
+
+  .btn-accent {
+    @apply rounded-md border border-port-white bg-port-primary px-4 py-2 text-port-gray-200 transition-colors;
+    @apply hover:border-port-primary/80 hover:bg-port-primary/90;
+  }
+
+  .section-title {
+    @apply font-display text-4xl font-bold uppercase md:text-5xl lg:text-6xl;
+  }
+
+  .section-subtitle {
+    @apply font-display text-xl md:text-2xl;
+  }
+}
