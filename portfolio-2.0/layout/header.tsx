@@ -3,6 +3,8 @@
 import { site } from '@/lib/data';
 import Image from 'next/image';
 import { useState } from 'react';
+import { MdClose, MdWhatsapp } from 'react-icons/md';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 import profileImage from '@/public/images/joao-maia.png';
 
@@ -16,7 +18,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-[#0b0b0b] backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-port-gray-200 bg-port-black backdrop-blur">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
         <a href="#" className="flex items-center text-white gap-3 font-semibold">
           <Image
@@ -30,18 +32,19 @@ export default function Header() {
         </a>
 
         <nav
-          className="hidden items-center gap-6 text-sm text-[#c3c2b7] md:flex"
+          className="hidden items-center gap-6 p-small text-port-gray-200 md:flex"
           aria-label="Principal"
         >
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-brand">
+            <a key={l.href} href={l.href} className="hover:text-port-primary">
               {l.label}
             </a>
           ))}
           <a
             href={site.whatsapp}
-            className="rounded-lg bg-brand px-4 py-2 font-medium text-white hover:bg-brand-dark"
+            className="flex flex-row items-center justify-center gap-1.5 rounded-lg bg-port-primary px-4 py-2 p-medium text-white hover:text-port-blue-100"
           >
+            <MdWhatsapp size={20} />
             WhatsApp
           </a>
         </nav>
@@ -52,13 +55,15 @@ export default function Header() {
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          <span className="text-4xl leading-none text-white">{open ? '×' : '≡'}</span>
+          <span className="text-4xl leading-none text-white">
+            {open ? <MdClose size={26} /> : <RxHamburgerMenu size={26} />}
+          </span>
         </button>
       </div>
 
       {open && (
         <nav
-          className="border-t border-neutral-200 bg-white px-5 pb-3 md:hidden"
+          className="border-t border-port-gray-200 bg-white px-5 pb-3 md:hidden"
           aria-label="Menu mobile"
         >
           {links.map((l) => (
@@ -66,7 +71,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-neutral-100 py-3 text-neutral-700"
+              className="block border-b border-port-gray-50 py-3 text-port-gray-800 hover:text-port-gray-200"
             >
               {l.label}
             </a>
