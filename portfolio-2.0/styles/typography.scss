@@ -1,0 +1,130 @@
+@reference './tailwind-base.css';
+
+@layer base {
+  h1,
+  .h1 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0;
+    @apply font-normal;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 54px;
+      line-height: 58px;
+    }
+
+    &.h1-variant {
+      font-size: 40px;
+      line-height: 44px;
+
+      @media (min-width: theme('screens.lg')) {
+        font-size: 70px;
+        line-height: 68px;
+      }
+    }
+  }
+
+  h2,
+  .h2 {
+    @apply font-medium;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    &.h2-variant {
+      font-size: 24px;
+      line-height: 32px;
+
+      @media (min-width: theme('screens.lg')) {
+        font-size: 32px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  h3,
+  .h3 {
+    @apply font-medium;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 28px;
+    }
+  }
+
+  h4,
+  .h4 {
+    @apply font-medium;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 24px;
+    }
+  }
+
+  .p-large {
+    font-size: 18px;
+    line-height: 24px;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .p-large-bold {
+    @extend .p-large;
+    @apply font-medium;
+  }
+
+  body,
+  .p-medium {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.7px;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .p-medium-bold {
+    @extend .p-medium;
+    @apply font-medium;
+  }
+
+  .p-small {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: theme('screens.lg')) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .p-small-bold {
+    @extend .p-small;
+    @apply font-medium;
+  }
+
+  .p-caption {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .p-caption-bold {
+    @extend .p-caption;
+    @apply font-bold;
+  }
+}
