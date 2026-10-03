@@ -71,7 +71,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-port-gray-50 py-3 text-port-gray-800 hover:text-port-gray-200"
+              className="block border-b border-port-gray-50 py-3 text-port-gray-800 hover:text-port-gray-600"
             >
               {l.label}
             </a>
