@@ -18,8 +18,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-port-gray-200 bg-port-black backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
+    <header className="sticky w-full top-0 z-40 border-b border-port-gray-200 bg-port-black backdrop-blur">
+      <div className="mx-auto flex h-20 container items-center justify-between px-5">
         <a href="#" className="flex items-center text-white gap-3 font-semibold">
           <Image
             src={profileImage}
