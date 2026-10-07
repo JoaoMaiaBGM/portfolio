@@ -1,16 +1,17 @@
 'use client';
 
-import { site } from '@/lib/data';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { MdClose, MdWhatsapp } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
+import { site } from '@/lib/data/index';
+
 import profileImage from '@/public/images/joao-maia.png';
 
 const links = [
-  { href: '#projetos', label: 'Projetos' },
   { href: '#tecnologias', label: 'Tecnologias' },
+  { href: '#projetos', label: 'Projetos' },
   { href: '#contato', label: 'Contato' },
 ];
 
@@ -44,13 +45,15 @@ export default function Header() {
             className="hidden items-center gap-6 p-small text-port-gray-200 md:flex"
             aria-label="Principal"
           >
-            {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-port-primary">
-                {l.label}
+            {links.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-port-primary">
+                {link.label}
               </a>
             ))}
             <a
               href={site.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex flex-row items-center justify-center gap-1.5 rounded-lg bg-port-primary px-4 py-2 p-medium text-white hover:text-port-blue-100"
             >
               <MdWhatsapp size={20} />
