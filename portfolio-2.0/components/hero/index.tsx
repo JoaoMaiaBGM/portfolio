@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { site } from '@/lib/data';
+import { site } from '@/lib/data/index';
 
 import desktopHeroImg from '@/components/hero/_assets/desktop-hero.png';
 import tabletHeroImg from '@/components/hero/_assets/tablet-hero.webp';

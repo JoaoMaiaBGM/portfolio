@@ -1,33 +1,4 @@
-export const site = {
-  name: 'João Maia',
-  whatsapp:
-    'https://wa.me/5581900000000?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento',
-  email: 'contato@joaomaia.com.br',
-  github: 'https://github.com/SEU-USUARIO',
-  linkedin: 'https://www.linkedin.com/in/SEU-PERFIL',
-};
-
-export const techGroups = [
-  {
-    title: 'Front-end',
-    items: ['React', 'Next.js', 'Tailwind CSS', 'Styled Components', 'TypeScript'],
-  },
-  { title: 'Back-end', items: ['Node.js', 'Python', 'Django', 'REST APIs'] },
-  { title: 'Bancos de dados', items: ['PostgreSQL', 'SQLite'] },
-];
-
-export type Shot = { src: string; label: string };
-
-export type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  gallery: Shot[]; // a primeira imagem é a capa
-  live: string;
-  code: string;
-};
-
-export const projects: Project[] = [
+export const projects = [
   {
     title: 'Mineiríssimo',
     description:
