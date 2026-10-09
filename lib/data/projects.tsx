@@ -22,8 +22,8 @@ export const projects = [
       { src: mineirissimoAbout, label: 'Sobre nós' },
       { src: mineirissimoStore, label: 'Onde estamos' },
     ],
-    live: 'https://SEU-LINK',
-    code: 'https://github.com/SEU-USUARIO/mineirissimo',
+    live: 'https://www.mineirissimorecife.com.br/',
+    code: 'https://github.com/JoaoMaiaBGM/mineirissimo',
   },
   {
     title: 'Vinil89',
@@ -35,8 +35,8 @@ export const projects = [
       { src: vinil89Gallery, label: 'Galeria e clipes' },
       { src: vinil89Contact, label: 'Contato' },
     ],
-    live: 'https://SEU-LINK',
-    code: 'https://github.com/SEU-USUARIO/vinil89',
+    live: 'https://www.vinil89.com.br/',
+    code: 'https://github.com/JoaoMaiaBGM/vinil89',
   },
   {
     title: 'Black Skull',
@@ -48,7 +48,7 @@ export const projects = [
       { src: blackSkullObjectives, label: 'Objetivos e benefícios' },
       { src: blackSkullProducts, label: 'Categorias e lançamentos' },
     ],
-    live: 'https://SEU-LINK',
-    code: 'https://github.com/SEU-USUARIO/black-skull',
+    live: 'https://black-skull-orpin.vercel.app/',
+    code: 'https://github.com/JoaoMaiaBGM/black-skull',
   },
 ];

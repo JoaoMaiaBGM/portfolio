@@ -51,8 +51,8 @@ export default function Projects() {
                 ))}
               </ul>
               <div className="mt-4 flex gap-3 text-sm font-medium">
-                <a href={project.live} className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Ver projeto</a>
-                <a href={project.code} className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Código</a>
+                <a href={project.live} target="_blank" rel="noopener noreferrer" className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Ver projeto</a>
+                <a href={project.code} target="_blank" rel="noopener noreferrer" className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Código</a>
               </div>
             </article>
           ))}
