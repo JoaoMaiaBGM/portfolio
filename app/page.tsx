@@ -1,7 +1,7 @@
 import Hero from '@/components/hero';
+import Projects from '@/components/projects';
 import Tech from '@/components/tech';
 import Header from '@/layout/header';
-/* import Projects from '@/components/Projects'; */
 /* import Contact from '@/components/Contact'; */
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        {/* <Projects /> */}
+        <Projects />
         <Tech />
       </main>
       {/* <Contact /> */}
