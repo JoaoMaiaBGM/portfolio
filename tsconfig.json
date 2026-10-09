@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "tailwind.config.js"
-, "components/projects/index.jsx", "components/projects/_components/gallery.jsx"  ],
+, "components/projects/index.jsx", "components/projects/_components/gallery/index.jsx"  ],
   "exclude": ["node_modules"]
 }

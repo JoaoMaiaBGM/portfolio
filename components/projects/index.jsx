@@ -29,7 +29,7 @@ export default function Projects() {
                   trigger.current = event.currentTarget;
                   setOpen(index);
                 }}
-                className="group relative aspect-6/3 overflow-hidden rounded-lg border border-port-gray-200 bg-neutral-100 text-left"
+                className="group relative aspect-[1916/875] overflow-hidden rounded-lg border border-port-gray-200 bg-neutral-100 text-left"
               >
                 <Image
                   src={project.gallery[0].src}
@@ -60,7 +60,7 @@ export default function Projects() {
       </div>
 
       {open !== null && (
-        <Gallery title={projects[open].title} shots={projects[open].gallery} onClose={close} />
+        <Gallery title={projects[open].title} projectImages={projects[open].gallery} onClose={close} />
       )}
     </section>
   );
