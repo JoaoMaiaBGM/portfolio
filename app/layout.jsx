@@ -1,6 +1,5 @@
 import '@/styles/globals.scss';
 import '@/styles/tailwind-base.css';
-import type { Metadata } from 'next';
 import { Montserrat, Oswald, Roboto } from 'next/font/google';
 
 const roboto = Roboto({
@@ -26,7 +25,7 @@ const montserrat = Montserrat({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || '';
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL(siteUrl),
   title: 'João Maia | Desenvolvedor Full-Stack',
   description:
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${roboto.variable} ${oswald.variable} ${montserrat.variable}`}>
       <body className="font-sans antialiased">{children}</body>
