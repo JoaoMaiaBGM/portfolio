@@ -1,8 +1,15 @@
 import { site } from '@/lib/data';
 import { MdWhatsapp } from 'react-icons/md';
 
-import FloatingWhatsApp from './_components/floating-whatsapp-button';
+import FloatingWhatsAppButton from './_components/floating-whatsapp-button';
+
 const WHATSAPP_BUTTON_ID = 'contato-whatsapp';
+const contactLinks = [
+  { id: WHATSAPP_BUTTON_ID, href: site.whatsapp, label: 'Whatsapp', icon: <MdWhatsapp /> },
+  { href: site.email, label: site.email },
+  { href: site.linkedin, label: 'LinkedIn' },
+  { href: site.github, label: 'GitHub' },
+];
 
 export default function Contact() {
   return (
@@ -13,38 +20,33 @@ export default function Contact() {
           Me conte o que você precisa e respondo com uma proposta.
         </p>
         <div className="mx-auto mt-8 flex max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
-          <a
-            id={WHATSAPP_BUTTON_ID}
-            href={site.whatsapp}
-            className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 flex items-center justify-center gap-2 rounded-lg px-5 py-3"
-          >
-            <MdWhatsapp />
-            WhatsApp
-          </a>
-          <a
-            href={`mailto:${site.email}`}
-            className="border-port-white p-medium hover:text-port-blue-100 hover:border-port-blue-100 rounded-lg border px-5 py-3"
-          >
-            {site.email}
-          </a>
-          <a
-            href={site.linkedin}
-            className="border-port-white p-medium hover:text-port-blue-100 hover:border-port-blue-100 rounded-lg border px-5 py-3"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={site.github}
-            className="border-port-white p-medium hover:text-port-blue-100 hover:border-port-blue-100 rounded-lg border px-5 py-3"
-          >
-            GitHub
-          </a>
+          {contactLinks.map((link) =>
+            link.id === WHATSAPP_BUTTON_ID ? (
+              <a
+                id={link.id}
+                key={link.label}
+                href={link.href}
+                className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 flex items-center justify-center gap-2 rounded-lg px-5 py-3"
+              >
+                {link.icon}
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="border-port-white p-medium hover:text-port-blue-100 hover:border-port-blue-100 rounded-lg border px-5 py-3"
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </div>
       </div>
 
-      <FloatingWhatsApp hideWhenVisibleId={WHATSAPP_BUTTON_ID} href={site.whatsapp}>
+      <FloatingWhatsAppButton hideWhenVisibleId={WHATSAPP_BUTTON_ID} href={site.whatsapp}>
         Falar no WhatsApp
-      </FloatingWhatsApp>
+      </FloatingWhatsAppButton>
     </footer>
   );
 }
