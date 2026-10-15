@@ -78,14 +78,14 @@ export default function Header() {
             className="absolute inset-x-0 top-full border-b border-port-gray-200 bg-white px-5 pb-3 shadow-xl md:hidden"
             aria-label="Menu mobile"
           >
-            {links.map((l) => (
+            {links.map((link) => (
               <a
-                key={l.href}
-                href={l.href}
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
                 className="block border-b border-port-gray-50 py-3 text-port-gray-800 hover:text-port-gray-600 last:border-b-0"
               >
-                {l.label}
+                {link.label}
               </a>
             ))}
           </nav>

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { MdArrowBackIosNew, MdArrowForwardIos, MdOutlineClose } from "react-icons/md";
+
+import { ArrowButton } from '../buttons/arrow-button';
 
 export function GalleryHeader({ title, imageLabel, onClose, closeButtonRef }) {
   return (
@@ -13,23 +16,9 @@ export function GalleryHeader({ title, imageLabel, onClose, closeButtonRef }) {
         aria-label="Fechar galeria"
         className="grid h-11 w-11 place-items-center rounded-lg p-large hover:bg-port-white/10"
       >
-        ×
+        <MdOutlineClose size={18}/>
       </button>
     </div>
-  );
-}
-
-const ARROW_POSITION = { left: "left-2", right: "right-2" };
-
-export function ArrowButton({ side, label, symbol, onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-label={label}
-      className={`absolute ${ARROW_POSITION[side]} top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-port-black/60 p-large text-port-white hover:bg-port-black/80`}
-    >
-      {symbol}
-    </button>
   );
 }
 
@@ -47,8 +36,8 @@ export function Slide({ title, image, currentIndex, hasMultipleImages, onPreviou
       />
       {hasMultipleImages && (
         <>
-          <ArrowButton side="left" symbol="‹" label="Imagem anterior" onClick={onPrevious} />
-          <ArrowButton side="right" symbol="›" label="Próxima imagem" onClick={onNext} />
+          <ArrowButton side="left" symbol={<MdArrowBackIosNew size={10}/>} label="Imagem anterior" onClick={onPrevious} />
+          <ArrowButton side="right" symbol={<MdArrowForwardIos size={10}/>} label="Próxima imagem" onClick={onNext} />
         </>
       )}
     </div>
