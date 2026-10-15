@@ -53,12 +53,12 @@
   }
 
   .btn-primary {
-    @apply rounded-md border border-port-white bg-port-primary px-4 py-2 text-port-white transition-colors;
+    @apply border-port-white bg-port-primary text-port-white rounded-md border px-4 py-2 transition-colors;
     @apply hover:border-port-black hover:bg-port-black hover:text-port-white;
   }
 
   .btn-accent {
-    @apply rounded-md border border-port-white bg-port-primary px-4 py-2 text-port-gray-200 transition-colors;
+    @apply border-port-white bg-port-primary text-port-gray-200 rounded-md border px-4 py-2 transition-colors;
     @apply hover:border-port-primary/80 hover:bg-port-primary/90;
   }
 
