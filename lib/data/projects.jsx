@@ -9,7 +9,6 @@ import vinil89About from '@/public/images/projects/vinil89About.png';
 import vinil89Contact from '@/public/images/projects/vinil89Contact.png';
 import vinil89Gallery from '@/public/images/projects/vinil89Gallery.png';
 
-
 export const projects = [
   {
     title: 'Mineiríssimo',

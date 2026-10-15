@@ -28,9 +28,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky w-full top-0 z-40 border-b border-port-gray-200 bg-port-black backdrop-blur">
-        <div className="mx-auto flex h-20 container items-center justify-between px-5">
-          <a href="#" className="flex items-center text-white gap-3 font-semibold">
+      <header className="border-port-gray-200 bg-port-black sticky top-0 z-40 w-full border-b backdrop-blur">
+        <div className="container mx-auto flex h-20 items-center justify-between px-5">
+          <a href="#" className="flex items-center gap-3 font-semibold text-white">
             <Image
               src={profileImage}
               alt="Foto de João Maia"
@@ -42,7 +42,7 @@ export default function Header() {
           </a>
 
           <nav
-            className="hidden items-center gap-6 p-small text-port-gray-200 md:flex"
+            className="p-small text-port-gray-200 hidden items-center gap-6 md:flex"
             aria-label="Principal"
           >
             {links.map((link) => (
@@ -54,7 +54,7 @@ export default function Header() {
               href={site.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-row items-center justify-center gap-1.5 rounded-lg bg-port-primary px-4 py-2 p-medium text-white hover:text-port-blue-100"
+              className="bg-port-primary p-medium hover:text-port-blue-100 flex flex-row items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-white"
             >
               <MdWhatsapp size={20} />
               WhatsApp
@@ -75,7 +75,7 @@ export default function Header() {
 
         {open && (
           <nav
-            className="absolute inset-x-0 top-full border-b border-port-gray-200 bg-white px-5 pb-3 shadow-xl md:hidden"
+            className="border-port-gray-200 absolute inset-x-0 top-full border-b bg-white px-5 pb-3 shadow-xl md:hidden"
             aria-label="Menu mobile"
           >
             {links.map((link) => (
@@ -83,7 +83,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-port-gray-50 py-3 text-port-gray-800 hover:text-port-gray-600 last:border-b-0"
+                className="border-port-gray-50 text-port-gray-800 hover:text-port-gray-600 block border-b py-3 last:border-b-0"
               >
                 {link.label}
               </a>
@@ -96,7 +96,7 @@ export default function Header() {
         <div
           aria-hidden="true"
           onClick={close}
-          className="fixed inset-0 z-30 bg-port-black/60 md:hidden"
+          className="bg-port-black/60 fixed inset-0 z-30 md:hidden"
         />
       )}
     </>

@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import { projects } from "@/lib/data";
-import Image from "next/image";
-import { useRef, useState } from "react";
-import Gallery from "./_components/gallery";
+import Image from 'next/image';
+import { useRef, useState } from 'react';
+
+import { projects } from '@/lib/data';
+import Gallery from './_components/gallery';
 
 export default function Projects() {
   const [open, setOpen] = useState(null);
@@ -15,8 +16,8 @@ export default function Projects() {
   };
 
   return (
-    <section id="projetos" className="mx-auto bg-port-gray-800 w-full">
-      <div className="container section-p">
+    <section id="projetos" className="bg-port-gray-800 mx-auto w-full">
+      <div className="section-p container">
         <h2 className="h2-variant text-port-white mb-8">Projetos</h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -29,7 +30,7 @@ export default function Projects() {
                   trigger.current = event.currentTarget;
                   setOpen(index);
                 }}
-                className="group relative aspect-[1916/875] overflow-hidden rounded-lg border border-port-gray-200 bg-neutral-100 text-left"
+                className="group border-port-gray-200 relative aspect-[1916/875] overflow-hidden rounded-lg border bg-neutral-100 text-left"
               >
                 <Image
                   src={project.gallery[0].src}
@@ -38,21 +39,42 @@ export default function Projects() {
                   sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 100vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="absolute bottom-2 right-2 rounded-md bg-port-black px-2 py-1 p-small text-white">
+                <span className="bg-port-black p-small absolute right-2 bottom-2 rounded-md px-2 py-1 text-white">
                   Ver {project.gallery.length} telas
                 </span>
               </button>
 
-              <h3 className="mt-4 p-large-bold text-port-white ">{project.title}</h3>
-              <p className="mt-1 p-small leading-relaxed text-port-gray-200">{project.description}</p>
+              <h3 className="p-large-bold text-port-white mt-4">{project.title}</h3>
+              <p className="p-small text-port-gray-200 mt-1 leading-relaxed">
+                {project.description}
+              </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <li key={tag} className="rounded-md bg-port-blue-800 px-2 py-1 p-caption text-port-blue-300">{tag}</li>
+                  <li
+                    key={tag}
+                    className="bg-port-blue-800 p-caption text-port-blue-300 rounded-md px-2 py-1"
+                  >
+                    {tag}
+                  </li>
                 ))}
               </ul>
               <div className="mt-4 flex gap-3 text-sm font-medium">
-                <a href={project.live} target="_blank" rel="noopener noreferrer" className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Ver projeto</a>
-                <a href={project.code} target="_blank" rel="noopener noreferrer" className="rounded-lg text-port-blue-300 hover:text-port-blue-600">Código</a>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-port-blue-300 hover:text-port-blue-600 rounded-lg"
+                >
+                  Ver projeto
+                </a>
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-port-blue-300 hover:text-port-blue-600 rounded-lg"
+                >
+                  Código
+                </a>
               </div>
             </article>
           ))}
@@ -60,7 +82,11 @@ export default function Projects() {
       </div>
 
       {open !== null && (
-        <Gallery title={projects[open].title} projectImages={projects[open].gallery} onClose={close} />
+        <Gallery
+          title={projects[open].title}
+          projectImages={projects[open].gallery}
+          onClose={close}
+        />
       )}
     </section>
   );

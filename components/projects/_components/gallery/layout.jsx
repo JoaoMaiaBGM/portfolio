@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { MdArrowBackIosNew, MdArrowForwardIos, MdOutlineClose } from "react-icons/md";
+import Image from 'next/image';
+import { MdArrowBackIosNew, MdArrowForwardIos, MdOutlineClose } from 'react-icons/md';
 
 import { ArrowButton } from '../buttons/arrow-button';
 
 export function GalleryHeader({ title, imageLabel, onClose, closeButtonRef }) {
   return (
-    <div className="mb-3 flex items-center justify-between text-port-white">
+    <div className="text-port-white mb-3 flex items-center justify-between">
       <p className="p-small">
         <span className="font-semibold">{title}</span>
         <span className="text-port-white/70"> · {imageLabel}</span>
@@ -14,9 +14,9 @@ export function GalleryHeader({ title, imageLabel, onClose, closeButtonRef }) {
         ref={closeButtonRef}
         onClick={onClose}
         aria-label="Fechar galeria"
-        className="grid h-11 w-11 place-items-center rounded-lg p-large hover:bg-port-white/10"
+        className="p-large hover:bg-port-white/10 grid h-11 w-11 place-items-center rounded-lg"
       >
-        <MdOutlineClose size={18}/>
+        <MdOutlineClose size={18} />
       </button>
     </div>
   );
@@ -24,7 +24,7 @@ export function GalleryHeader({ title, imageLabel, onClose, closeButtonRef }) {
 
 export function Slide({ title, image, currentIndex, hasMultipleImages, onPrevious, onNext }) {
   return (
-    <div className="relative aspect-[1916/875] overflow-hidden rounded-lg bg-port-gray-850">
+    <div className="bg-port-gray-850 relative aspect-[1916/875] overflow-hidden rounded-lg">
       <Image
         key={currentIndex}
         src={image.src}
@@ -36,8 +36,18 @@ export function Slide({ title, image, currentIndex, hasMultipleImages, onPreviou
       />
       {hasMultipleImages && (
         <>
-          <ArrowButton side="left" symbol={<MdArrowBackIosNew size={10}/>} label="Imagem anterior" onClick={onPrevious} />
-          <ArrowButton side="right" symbol={<MdArrowForwardIos size={10}/>} label="Próxima imagem" onClick={onNext} />
+          <ArrowButton
+            side="left"
+            symbol={<MdArrowBackIosNew size={10} />}
+            label="Imagem anterior"
+            onClick={onPrevious}
+          />
+          <ArrowButton
+            side="right"
+            symbol={<MdArrowForwardIos size={10} />}
+            label="Próxima imagem"
+            onClick={onNext}
+          />
         </>
       )}
     </div>
@@ -55,9 +65,9 @@ export function Thumbnails({ projectImages, currentIndex, onSelect }) {
             key={index}
             onClick={() => onSelect(index)}
             aria-label={`Ver ${image.label}`}
-            aria-current={isActive ? "true" : undefined}
+            aria-current={isActive ? 'true' : undefined}
             className={`relative h-10 w-20 overflow-hidden rounded-md ring-2 sm:h-12 sm:w-24 ${
-              isActive ? "ring-port-white" : "opacity-60 ring-transparent hover:opacity-100"
+              isActive ? 'ring-port-white' : 'opacity-60 ring-transparent hover:opacity-100'
             }`}
           >
             <Image src={image.src} alt="" fill sizes="96px" className="object-cover" />

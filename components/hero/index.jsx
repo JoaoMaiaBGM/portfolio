@@ -8,25 +8,25 @@ import tabletHeroImg from '@/components/hero/_assets/tablet-hero.webp';
 export default function Hero() {
   return (
     <section className="bg-port-primary text-white">
-      <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-5 py-16 lg:grid-cols-2 md:py-24">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-5 py-16 md:py-24 lg:grid-cols-2">
         <div>
-          <p className="mb-3 p-small text-port-white">Desenvolvedor Full-Stack em Recife, PE</p>
-          <h1 className="h1 font-semibold leading-tight">
+          <p className="p-small text-port-white mb-3">Desenvolvedor Full-Stack em Recife, PE</p>
+          <h1 className="h1 leading-tight font-semibold">
             Sites e sistemas web que fazem o seu negócio vender mais
           </h1>
-          <p className="mt-4 max-w-md leading-relaxed text-port-white">
+          <p className="text-port-white mt-4 max-w-md leading-relaxed">
             Landing pages, e-commerce e sistemas sob medida, do design ao deploy.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={site.whatsapp}
-              className="rounded-lg bg-port-white px-5 py-3 text-center p-medium text-port-blue-700 hover:bg-port-blue-50"
+              className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 rounded-lg px-5 py-3 text-center"
             >
               Pedir orçamento
             </a>
             <a
               href="#projetos"
-              className="rounded-lg border border-white px-5 py-3 text-center p-medium hover:text-port-blue-100 hover:border-port-blue-100"
+              className="p-medium hover:text-port-blue-100 hover:border-port-blue-100 rounded-lg border border-white px-5 py-3 text-center"
             >
               Ver projetos
             </a>

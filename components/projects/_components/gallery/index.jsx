@@ -1,13 +1,15 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 import { useBodyScrollLock, useCarousel, useKeyboardShortcuts, useSwipe } from './hooks';
 import { GalleryHeader, Slide, Thumbnails } from './layout';
 
 export default function Gallery({ title, projectImages, onClose }) {
   const closeButtonRef = useRef(null);
-  const { currentIndex, setCurrentIndex, goToPrevious, goToNext } = useCarousel(projectImages.length);
+  const { currentIndex, setCurrentIndex, goToPrevious, goToNext } = useCarousel(
+    projectImages.length,
+  );
   const swipeHandlers = useSwipe({ onSwipeLeft: goToNext, onSwipeRight: goToPrevious });
 
   useKeyboardShortcuts({ onClose, onPrevious: goToPrevious, onNext: goToNext });
@@ -21,7 +23,7 @@ export default function Gallery({ title, projectImages, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-label={`Galeria do projeto ${title}`}
-      className="fixed inset-0 z-60 flex items-center justify-center bg-port-black/85 p-3 sm:p-6"
+      className="bg-port-black/85 fixed inset-0 z-60 flex items-center justify-center p-3 sm:p-6"
       onClick={onClose}
     >
       <div
@@ -45,9 +47,13 @@ export default function Gallery({ title, projectImages, onClose }) {
           onNext={goToNext}
         />
 
-        <Thumbnails projectImages={projectImages} currentIndex={currentIndex} onSelect={setCurrentIndex} />
+        <Thumbnails
+          projectImages={projectImages}
+          currentIndex={currentIndex}
+          onSelect={setCurrentIndex}
+        />
 
-        <p className="mt-2 text-center text-xs text-white/60" aria-live="polite">
+        <p className="p-caption text-port-white/60 mt-2 text-center" aria-live="polite">
           {currentIndex + 1} / {projectImages.length}
         </p>
       </div>

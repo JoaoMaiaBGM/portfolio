@@ -1,3 +1,3 @@
-export { projects } from "@/lib/data/projects";
+export { projects } from '@/lib/data/projects';
 export { site } from '@/lib/data/site';
 export { stacks } from '@/lib/data/stacks';
