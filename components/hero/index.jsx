@@ -20,6 +20,8 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 rounded-lg px-5 py-3 text-center"
             >
               Pedir orçamento
