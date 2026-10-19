@@ -14,7 +14,7 @@ export function FooterNav() {
         className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 flex items-center justify-center gap-2 rounded-lg px-5 py-3"
       >
         <MdWhatsapp />
-        {contact.whatsapp}
+        WhatsApp
       </a>
 
       <a
