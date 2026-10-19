@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { site } from '@/lib/data/index';
+import { contact } from '@/lib/data/index';
 
 import desktopHeroImg from '@/components/hero/_assets/desktop-hero.png';
 import tabletHeroImg from '@/components/hero/_assets/tablet-hero.webp';
@@ -19,7 +19,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={site.whatsapp}
+              href={contact.whatsapp}
               className="bg-port-white p-medium text-port-blue-700 hover:bg-port-blue-50 rounded-lg px-5 py-3 text-center"
             >
               Pedir orçamento

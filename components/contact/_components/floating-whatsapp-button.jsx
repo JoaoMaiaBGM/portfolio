@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { MdWhatsapp } from 'react-icons/md';
 
-export default function FloatingWhatsAppButton({ href, hideWhenVisibleId }) {
+export function FloatingWhatsAppButton({ href, hideWhenVisibleId }) {
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {

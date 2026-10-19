@@ -1,4 +1,4 @@
-export const site = {
+export const contact = {
   name: process.env.NEXT_PUBLIC_NAME ?? 'João Maia',
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP,
   email: process.env.NEXT_PUBLIC_EMAIL,

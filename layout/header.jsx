@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { MdClose, MdWhatsapp } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-import { site } from '@/lib/data/index';
+import { contact } from '@/lib/data/index';
 
 import profileImage from '@/public/images/joao-maia.png';
 
@@ -30,7 +31,7 @@ export default function Header() {
     <>
       <header className="border-port-gray-200 bg-port-black sticky top-0 z-40 w-full border-b backdrop-blur">
         <div className="container mx-auto flex h-20 items-center justify-between px-5">
-          <a href="#" className="flex items-center gap-3 font-semibold text-white">
+          <Link href="#" className="flex items-center gap-3 font-semibold text-white">
             <Image
               src={profileImage}
               alt="Foto de João Maia"
@@ -38,20 +39,20 @@ export default function Header() {
               height={60}
               className="rounded-full"
             />
-            {site.name}
-          </a>
+            {contact.name}
+          </Link>
 
           <nav
             className="p-small text-port-gray-200 hidden items-center gap-6 md:flex"
             aria-label="Principal"
           >
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-port-primary">
+              <Link key={link.href} href={link.href} className="hover:text-port-primary">
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
-              href={site.whatsapp}
+              href={contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-port-primary p-medium hover:text-port-blue-100 flex flex-row items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-white"
@@ -79,14 +80,14 @@ export default function Header() {
             aria-label="Menu mobile"
           >
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="border-port-gray-50 text-port-gray-800 hover:text-port-gray-600 block border-b py-3 last:border-b-0"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
         )}
