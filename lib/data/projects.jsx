@@ -1,13 +1,25 @@
-import blackSkullHero from '@/public/images/projects/blackSkullHero.png';
-import blackSkullObjectives from '@/public/images/projects/blackSkullObjectives.png';
-import blackSkullProducts from '@/public/images/projects/blackSkullProducts.png';
-import mineirissimoAbout from '@/public/images/projects/mineirissimoAbout.png';
-import mineirissimoHero from '@/public/images/projects/mineirissimoHero.png';
-import mineirissimoProducts from '@/public/images/projects/mineirissimoProducts.png';
-import mineirissimoStore from '@/public/images/projects/mineirissimoStore.png';
-import vinil89About from '@/public/images/projects/vinil89About.png';
-import vinil89Contact from '@/public/images/projects/vinil89Contact.png';
-import vinil89Gallery from '@/public/images/projects/vinil89Gallery.png';
+const IMAGES_ROOTS = '/images/projects';
+
+const deviceLabels = {
+  mobile: 'Mobile',
+  tablet: 'Tablet',
+  desktop: 'Desktop',
+};
+
+const buildGallery = (slug, imagesByDevice) => {
+  const gallery = Object.fromEntries(
+    Object.entries(imagesByDevice).map(([device, images]) => [
+      device,
+      images.map((file, index) => ({
+        src: `${IMAGES_ROOTS}/${slug}/${file}`,
+        device,
+        label: `${deviceLabels[device] ?? device} — Tela ${index + 1}`,
+      })),
+    ]),
+  );
+
+  return gallery;
+};
 
 export const projects = [
   {
@@ -15,12 +27,17 @@ export const projects = [
     description:
       'Site institucional com catálogo de produtos, página de loja física e pedidos por WhatsApp para uma empresa de pão de queijo artesanal. Conteúdo editável pelo próprio cliente.',
     tags: ['Next.js', 'Tailwind', 'DatoCMS'],
-    gallery: [
-      { src: mineirissimoHero, label: 'Página inicial' },
-      { src: mineirissimoProducts, label: 'Catálogo de produtos' },
-      { src: mineirissimoAbout, label: 'Sobre nós' },
-      { src: mineirissimoStore, label: 'Onde estamos' },
-    ],
+    gallery: buildGallery('mineirissimo', {
+      mobile: [
+        'heroMobile.png',
+        'productsMobile.png',
+        'aboutTextMobile.png',
+        'aboutNumbersMobile.png',
+        'storeMobile.png',
+      ],
+      tablet: ['heroTablet.png', 'productsTablet.png', 'aboutTablet.png', 'storeTablet.png'],
+      desktop: ['heroDesktop.png', 'productsDesktop.png', 'aboutDesktop.png', 'storeDesktop.png'],
+    }),
     live: 'https://www.mineirissimorecife.com.br/',
     code: 'https://github.com/JoaoMaiaBGM/mineirissimo',
   },
@@ -29,11 +46,16 @@ export const projects = [
     description:
       'Site da banda cover de Pop/Rock dos anos 80 e 90 do Recife, com galeria de fotos, clipes e formulário de contato para shows.',
     tags: ['React', 'Tailwind', 'Wix'],
-    gallery: [
-      { src: vinil89About, label: 'Sobre a banda' },
-      { src: vinil89Gallery, label: 'Galeria e clipes' },
-      { src: vinil89Contact, label: 'Contato' },
-    ],
+    gallery: buildGallery('vinil89', {
+      mobile: [
+        'aboutMobile.png',
+        'galleryMobile.png',
+        'contactMobile.png',
+        'contactFormMobile.png',
+      ],
+      tablet: ['aboutTablet.png', 'galleryTablet.png', 'contactTablet.png'],
+      desktop: ['aboutDesktop.png', 'galleryDesktop.png', 'contactDesktop.png'],
+    }),
     live: 'https://www.vinil89.com.br/',
     code: 'https://github.com/JoaoMaiaBGM/vinil89',
   },
@@ -42,11 +64,9 @@ export const projects = [
     description:
       'Front-end de e-commerce de suplementos, com categorias, vitrine de lançamentos, objetivos, blog e carrinho. Projeto de estudo.',
     tags: ['React', 'Styled Components'],
-    gallery: [
-      { src: blackSkullHero, label: 'Página inicial' },
-      { src: blackSkullObjectives, label: 'Objetivos e benefícios' },
-      { src: blackSkullProducts, label: 'Categorias e lançamentos' },
-    ],
+    gallery: buildGallery('blackSkull', {
+      desktop: ['heroDesktop.png', 'objectivesDesktop.png', 'productsDesktop.png'],
+    }),
     live: 'https://black-skull-orpin.vercel.app/',
     code: 'https://github.com/JoaoMaiaBGM/black-skull',
   },

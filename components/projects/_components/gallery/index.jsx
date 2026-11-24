@@ -6,6 +6,8 @@ import { useBodyScrollLock, useCarousel, useKeyboardShortcuts, useSwipe } from '
 import { GalleryHeader, Slide, Thumbnails } from './layout';
 
 export default function Gallery({ title, projectImages, onClose }) {
+  if (!projectImages?.length) return null;
+
   const closeButtonRef = useRef(null);
   const { currentIndex, setCurrentIndex, goToPrevious, goToNext } = useCarousel(
     projectImages.length,
