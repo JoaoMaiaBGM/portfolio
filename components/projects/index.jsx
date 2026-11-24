@@ -33,14 +33,14 @@ export default function Projects() {
                 className="group border-port-gray-200 relative aspect-[1916/875] overflow-hidden rounded-lg border bg-neutral-100 text-left"
               >
                 <Image
-                  src={project.gallery[0].src}
+                  src={project.gallery.desktop[0].src}
                   alt={`Capa do projeto ${project.title}`}
                   fill
                   sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 100vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <span className="bg-port-black p-small absolute right-2 bottom-2 rounded-md px-2 py-1 text-white">
-                  Ver {project.gallery.length} telas
+                  Ver {Object.values(project.gallery).flat().length} telas
                 </span>
               </button>
 
@@ -84,7 +84,7 @@ export default function Projects() {
       {open !== null && (
         <Gallery
           title={projects[open].title}
-          projectImages={projects[open].gallery}
+          projectImages={Object.values(projects[open].gallery).flat()}
           onClose={close}
         />
       )}
